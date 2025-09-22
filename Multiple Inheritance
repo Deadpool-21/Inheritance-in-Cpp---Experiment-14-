@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+protected:
+    string name;
+    int id;
+public:
+    void setEmployee(string n, int i) {
+        name = n;
+        id = i;
+    }
+};
+
+class Salary {
+protected:
+    double salary;
+public:
+    void setSalary(double s) {
+        salary = s;
+    }
+};
+
+class Manager : public Employee, public Salary {
+public:
+    void display() {
+        cout << "Manager Name: " << name << "\n ID: " << id << "\n Salary: Rs " << salary << endl;
+    }
+};
+
+int main() {
+    Manager m;
+    m.setEmployee("Nilay Bhatia", 100 );
+    m.setSalary(750000);
+    m.display();
+    return 0;
+}
+
+Output :- 
+
+Manager Name: Nilay Bhatia
+ ID: 100
+ Salary: Rs 750000
